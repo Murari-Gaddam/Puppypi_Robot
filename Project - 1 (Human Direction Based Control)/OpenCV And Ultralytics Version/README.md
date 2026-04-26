@@ -111,16 +111,6 @@ scp yolov8n.onnx ubuntu@<PI_IP>:/home/ubuntu/
 sudo docker cp /home/ubuntu/yolov8n.onnx 82df:/home/ubuntu/puppypi/src/puppy_control/scripts/
 ```
 
-## Known Bug
-```python
-# Wrong — when offcentre is negative, multiplying by -0.002 makes yaw_rate positive (wrong direction)
-elif offcentre < -100:
-    PuppyMove["Yaw_rate"] = -0.002 * offcentre
-
-# Fix — same formula for both cases, sign of offcentre handles direction
-PuppyMove["Yaw_rate"] = 0.002 * offcentre
-```
-
 ## Status
 - [x] SSH, VNC, VS Code Remote SSH setup
 - [x] Docker navigation
