@@ -35,7 +35,7 @@ def Move():
             if offcentre > 100:
                 PuppyMove["Yaw_rate"] = 0.002*offcentre
             elif offcentre < -100:
-                PuppyMove["Yaw_rate"]= -0.002*offcentre
+                PuppyMove["Yaw_rate"]= 0.002*offcentre
             else:
                 PuppyMove['Yaw_rate'] = 0
 
