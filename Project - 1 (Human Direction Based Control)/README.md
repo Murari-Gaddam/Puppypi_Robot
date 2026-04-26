@@ -22,5 +22,5 @@ Built to work within Docker container limitations on the Pi.
 5. Robot turns to follow
 
 ## See Individual READMEs
-- [`/ultralytics_version/README.md`](./'OpenCV And Ultralytics Version'/README.md)
+- [`/ultralytics_version/README.md`](./ultralytics_version/README.md)
 - [`/onnx_version/README.md`](./onnx_version/README.md)
