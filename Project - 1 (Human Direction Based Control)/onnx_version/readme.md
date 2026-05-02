@@ -8,21 +8,14 @@ Detects a person in the camera frame using YOLOv8n ONNX and adjusts the robot's 
 > *(Video coming soon)*
 
 ## How It Works
-ROS usb_cam node → /usb_cam/image_raw topic
-↓
-cv_bridge converts ROS Image → OpenCV numpy array
-↓
-Preprocess: resize 640x640, BGR→RGB, normalize, NCHW transpose
-↓
-YOLOv8n ONNX Runtime inference
-↓
-Parse output [8400, 84] → filter person class (confidence > 0.5)
-↓
-Calculate horizontal offset from frame center
-↓
-Publish yaw rate correction to /puppy_control/velocity
-↓
-Robot turns to keep person centered in frame
+- ROS usb_cam node → /usb_cam/image_raw topic
+- cv_bridge converts ROS Image → OpenCV numpy array
+- Preprocess: resize 640x640, BGR→RGB, normalize, NCHW transpose
+- YOLOv8n ONNX Runtime inference
+- Parse output [8400, 84] → filter person class (confidence > 0.5)
+- Calculate horizontal offset from frame center
+- Publish yaw rate correction to /puppy_control/velocity
+- Robot turns to keep person centered in frame
 
 ## Hardware
 - Hiwonder PuppyPi Quadruped Robot
